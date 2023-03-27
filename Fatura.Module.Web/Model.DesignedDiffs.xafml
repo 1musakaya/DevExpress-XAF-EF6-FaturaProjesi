@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="TransportListDCViewController_ListAction" SelectionDependencyType="Independent" ImageName="ModelEditor_ListView" />
+      <Action Id="WaybillViewController_CopyAction" Caption="Copy" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="Fatura.Module.BusinessObjects.Transport">
+      <OwnMembers>
+        <Member Name="TransportDate" NullText="" ImmediatePostData="False" DataSourceCriteria="" DataSourceProperty="" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="BenimMenu">
+        <Items>
+          <Item Id="IrsaliyeGirisi" Caption="İrsaliye Girişi" ViewId="Waybill_ListView_2" IsNewNode="True" />
+          <Item Id="WaybillList" Caption="Waybill List" ViewId="WaybillListDC_DetailView" IsNewNode="True" />
+          <Item Id="WaybillListDB" Caption="İrsaliye Listesi DB" ViewId="WaybillListDashboardView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" ChildItemsDisplayStyle="List">
+        <Items>
+          <Item Id="ContactList" Caption="Contact List" ViewId="ContactListDC_DetailView" IsNewNode="True" />
+          <Item Id="PaymentList" Caption="Payment List" ViewId="PaymentListDC_DetailView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Proje" ImageName="ModelEditor_Class_Object" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="ArrivalAddress_ListView" ImageName="BO_Address" IsNewNode="True" />
+          <Item Id="ExitAddress_ListView" ImageName="BO_Address" IsNewNode="True" />
+          <Item Id="Transport_ListView" ImageName="Action_Redo" IsNewNode="True" />
+          <Item Id="TransportAddress_ListView" ImageName="BO_Address" IsNewNode="True" />
+          <Item Id="TransportCities_ListView" ImageName="ModelEditor_Links" IsNewNode="True" />
+          <Item Id="TransportCompany_ListView" ImageName="Action_ChooseSkin" IsNewNode="True" />
+          <Item Id="TransportCountry_ListView" ImageName="ModelEditor_Links" IsNewNode="True" />
+          <Item Id="TransportIncomeExpense_ListView" ImageName="Action_Report_Object_Inplace_Preview" IsNewNode="True" />
+          <Item Id="TransportInvoice_ListView" ImageName="BO_Report" IsNewNode="True" />
+          <Item Id="TransportInvoiceDetail_ListView" ImageName="BO_Note" IsNewNode="True" />
+          <Item Id="TransportListDB" Caption="TransportList DB" ViewId="TransportListDasboardView" IsNewNode="True" />
+          <Item Id="TransportProduct_ListView" ImageName="ModelEditor_GenerateContent" IsNewNode="True" />
+          <Item Id="TransportService_ListView" ImageName="Action_AboutInfo" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options CollectionsEditMode="Edit" />
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="21.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="21.2.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Validation>
+    <Rules>
+      <RuleRequiredField Id="DevExpress.Persistent.Validation.RuleRequiredField_Fatura.Module.BusinessObjects.Company_Name" MessageTemplateMustNotBeEmpty="&quot;{TargetPropertyName}&quot; şirket ismi boş geçilemez." />
+      <RuleRequiredField Id="DevExpress.Persistent.Validation.RuleRequiredField_Fatura.Module.BusinessObjects.Waybill_Company" MessageTemplateMustNotBeEmpty="&quot;{TargetPropertyName}&quot; boş geçilemez." />
+    </Rules>
+  </Validation>
+  <ViewItems>
+    <PropertyEditor Name="PropertyEditors">
+      <RegisteredPropertyEditor PropertyType="System.Drawing.Color" EditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxColorPickerPropertyEditor" />
+    </PropertyEditor>
+  </ViewItems>
+  <Views>
+    <DetailView Id="Contact_DetailView">
+      <Items>
+        <PropertyEditor Id="Manager.Department.Office" PropertyName="Manager.Department.Office" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="65.26479750778816">
+            <LayoutGroup Id="Contact" RelativeSize="40.334128878281625">
+              <LayoutGroup Id="Contact_col1" RelativeSize="49.441624365482234">
+                <LayoutItem Id="WebPageAddress" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="NickName" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="SpouseName" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="TitleOfCourtesy" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Anniversary" RelativeSize="23.529411764705884" />
+              </LayoutGroup>
+              <LayoutGroup Id="Contact_col2" RelativeSize="50.558375634517766">
+                <LayoutItem Id="Position" RelativeSize="23.529411764705884" Index="0" />
+                <LayoutItem Id="Department" RelativeSize="17.647058823529413" Index="1" />
+                <LayoutItem Id="Manager.Department.Office" ViewItem="Manager.Department.Office" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
+                <LayoutItem Id="Manager" ViewItem="Manager" Index="3" RelativeSize="41.1764705882353" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Notes" RelativeSize="23.529411764705884" SizeConstraintsType="Default" Index="4" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Person" RelativeSize="39.856801909307876">
+              <LayoutGroup Id="Person_col1" RelativeSize="49.441624365482234">
+                <LayoutItem Id="FirstName" RelativeSize="22.535211267605632" />
+                <LayoutItem Id="LastName" RelativeSize="16.901408450704224" />
+                <LayoutGroup Id="Autocf9bf039-68d1-4ba1-b9c9-d5dad357dc5a" ShowCaption="False" Caption="Autocf9bf039-68d1-4ba1-b9c9-d5dad357dc5a(19)" Direction="Vertical" Index="2" RelativeSize="60.563380281690144" IsNewNode="True">
+                  <LayoutGroup Id="Auto51d2fd15-ef4e-4ee4-b215-3718b678f027" ShowCaption="False" Caption="Auto51d2fd15-ef4e-4ee4-b215-3718b678f027(20)" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="MiddleName" ViewItem="MiddleName" Index="0" RelativeSize="34.883720930232556" IsNewNode="True" />
+                    <LayoutItem Id="Address1" ViewItem="Address1" Index="1" RelativeSize="27.906976744186046" IsNewNode="True" />
+                    <LayoutItem Id="Address2" ViewItem="Address2" Index="2" RelativeSize="37.2093023255814" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="MiddleName" RelativeSize="36.363636363636367" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Person_col2" RelativeSize="50.558375634517766">
+                <LayoutItem Id="Birthday" RelativeSize="22.535211267605632" />
+                <LayoutItem Id="Email" RelativeSize="16.901408450704224" />
+                <LayoutItem Id="FullName" ViewItem="FullName" Index="2" RelativeSize="16.901408450704224" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Notes" ViewItem="Notes" Index="3" RelativeSize="43.661971830985912" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Party" RelativeSize="19.809069212410503">
+              <LayoutItem Id="DisplayName" RelativeSize="36.144578313253014" Index="0" />
+              <LayoutItem Id="Address2" RelativeSize="22.222222222222221" Index="1" Removed="True" />
+              <LayoutItem Id="Photo" RelativeSize="63.855421686746986" Index="1" />
+              <LayoutItem Id="Address1" RelativeSize="22.222222222222221" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="34.73520249221184">
+            <LayoutGroup Id="Tasks" RelativeSize="100">
+              <LayoutItem Id="Tasks" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="PhoneNumbers" Index="1" RelativeSize="100">
+              <LayoutItem Id="PhoneNumbers" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Subordinates" Index="2" RelativeSize="100">
+              <LayoutItem Id="Subordinates" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="AssignedTasks" RelativeSize="100">
+              <LayoutItem Id="AssignedTasks" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Contact_ListView" Criteria="" IsGroupPanelVisible="True">
+      <Columns>
+        <ColumnInfo Id="Department" SortOrder="None" GroupIndex="-1" Index="6" />
+        <ColumnInfo Id="Position" SortOrder="None" GroupIndex="-1" Index="7" />
+        <ColumnInfo Id="Notes" SortOrder="None" GroupIndex="-1" Index="8" />
+        <ColumnInfo Id="Manager" Index="9" SortOrder="None" GroupIndex="-1" />
+      </Columns>
+      <Filters CurrentFilterId="Developers">
+        <Filter Id="All Contacts" IsNewNode="True" />
+        <Filter Id="Developer" Removed="True" />
+        <Filter Id="Developers" Criteria="[Position.Title] = 'Developer'" IsNewNode="True" />
+        <Filter Id="Development Department Contacts" Criteria="[Department.Title] = 'Development Department'" IsNewNode="True" />
+      </Filters>
+    </ListView>
+    <DetailView Id="ContactListDC_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="ContactListActionCategoryItem" Caption="List" ActionContainer="ContactListActionCategory" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="7.6073619631901837">
+            <LayoutGroup Id="ContactListDC" RelativeSize="100">
+              <LayoutItem Id="StartDate" RelativeSize="51.612903225806448" MaxSize="400, 0" SizeConstraintsType="Custom" />
+              <LayoutItem Id="EndDate" RelativeSize="48.387096774193552" MaxSize="400, 0" SizeConstraintsType="Custom" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutItem Id="ContactListActionCategoryItem" ViewItem="ContactListActionCategoryItem" Index="1" RelativeSize="3.1901840490797544" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DemoTask_ListView" AllowEdit="True" NewItemRowPosition="Top" PreviewColumnName="Description" />
+    <ListView Id="Payment_ListView">
+      <Columns>
+        <ColumnInfo Id="Hours">
+          <Summary>
+            <ColumnSummaryItem Id="@761327dc-6b2c-4a12-8616-027462de9473" SummaryType="Average" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Total">
+          <Summary>
+            <ColumnSummaryItem Id="@8970fcbd-a404-4eca-8595-53292afda2af" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <DetailView Id="PaymentListDC_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="PaymentListActionCategory" Caption="PaymentListActionCategory" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.6971514242878563">
+            <LayoutGroup Id="PaymentListDC" RelativeSize="100">
+              <LayoutItem Id="Amount" RelativeSize="100" MaxSize="200, 0" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutItem Id="PaymentListActionCategoryItem" ViewItem="PaymentListActionCategory" Index="1" RelativeSize="3.8980509745127438" IsNewNode="True" />
+          <LayoutGroup Id="PaymentListDetailDC_Group" Direction="Vertical" Index="2" RelativeSize="90.4047976011994">
+            <LayoutItem Id="PaymentListDetailDC" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="TransportIncomeExpense_ListView">
+      <Columns>
+        <ColumnInfo Id="Amount">
+          <Summary>
+            <ColumnSummaryItem Id="@6d8bbc16-c259-46c3-8a29-120cb6969796" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="TransportInvoice_ListView">
+      <Columns>
+        <ColumnInfo Id="Total">
+          <Summary>
+            <ColumnSummaryItem Id="TotalSum" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <DashboardView Id="TransportListDasboardView" Caption="Transport List Dasboard" IsNewNode="True">
+      <Items IsNewNode="True">
+        <DashboardViewItem Id="FilterItem" ViewId="TransportListDC_DetailView" IsNewNode="True" />
+        <DashboardViewItem Id="ListItem" ViewId="Transport_ListView" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" IsNewNode="True">
+          <LayoutItem Id="FilterItem" ViewItem="FilterItem" Index="0" IsNewNode="True" />
+          <LayoutItem Id="ListItem" ViewItem="ListItem" Index="1" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
+    <DetailView Id="TransportListDC_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="TransportListActionCategory" Caption="TransportListActionCategory" ActionContainer="TransportListActionCategory" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="TransportListDC">
+              <LayoutItem Id="StartDate" MaxSize="400, 0" SizeConstraintsType="Custom" />
+              <LayoutItem Id="EndDate" MaxSize="400, 0" SizeConstraintsType="Custom" />
+              <LayoutItem Id="TransportListActionCategory" ViewItem="TransportListActionCategory" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Waybill_Details_ListView">
+      <Columns>
+        <ColumnInfo Id="Product.Kdv" PropertyName="Product.Kdv" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Waybill_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="49.925037481259373" IsNewNode="True">
+            <LayoutGroup Id="Waybill" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Id" ViewItem="Id" ShowCaption="" Index="0" RelativeSize="9.60960960960961" IsNewNode="True" />
+              <LayoutItem Id="Company" ViewItem="Company" ShowCaption="" Index="1" MaxSize="600, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="7.5075075075075075" IsNewNode="True" />
+              <LayoutItem Id="Address" ViewItem="Address" Index="2" RelativeSize="7.2072072072072073" MaxSize="600, 0" MinSize="50, 25" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="WaybillDate" ViewItem="WaybillDate" ShowCaption="" Index="3" MaxSize="600, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="26.726726726726728" IsNewNode="True" />
+              <LayoutItem Id="Item1" Index="4" RelativeSize="3.0030030030030028" IsNewNode="True" />
+              <LayoutItem Id="WaybillNo" ViewItem="WaybillNo" ShowCaption="" Index="5" MaxSize="600, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="45.945945945945944" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Details_Group" Index="1" ShowCaption="True" RelativeSize="50.074962518740627" IsNewNode="True">
+            <LayoutItem Id="Details" ViewItem="Details" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Waybill_DetailView_2" CaptionColon=":" EnableCaptionColon="True" CaptionLocation="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" CaptionWordWrap="Default" EnableLayoutGroupImages="True" RequiredFieldMark="*" ClassName="Fatura.Module.BusinessObjects.Waybill" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Company" PropertyName="Company" IsNewNode="True" />
+        <PropertyEditor Id="Details" PropertyName="Details" View="Waybill_Details_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Id" PropertyName="Id" IsNewNode="True" />
+        <PropertyEditor Id="WaybillDate" PropertyName="WaybillDate" IsNewNode="True" />
+        <PropertyEditor Id="WaybillNo" PropertyName="WaybillNo" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="49.925037481259373" IsNewNode="True">
+            <LayoutGroup Id="Waybill" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Id" ViewItem="Id" ShowCaption="" Index="0" RelativeSize="9.60960960960961" IsNewNode="True" />
+              <LayoutItem Id="WaybillDate" ViewItem="WaybillDate" ShowCaption="" Index="1" MaxSize="600, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="36.636636636636638" IsNewNode="True" />
+              <LayoutItem Id="Company" ViewItem="Company" ShowCaption="" Index="2" MaxSize="600, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="7.5075075075075075" IsNewNode="True" />
+              <LayoutItem Id="Item1" Index="3" RelativeSize="3.0030030030030028" IsNewNode="True" />
+              <LayoutItem Id="WaybillNo" ViewItem="WaybillNo" ShowCaption="" Index="4" MaxSize="600, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="43.243243243243242" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Details_Group" Index="1" ShowCaption="True" RelativeSize="50.074962518740627" IsNewNode="True">
+            <LayoutItem Id="Details" ViewItem="Details" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Waybill_ListView">
+      <Columns>
+        <ColumnInfo Id="WaybillDate" PropertyName="WaybillDate" IsNewNode="True" Removed="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="Waybill_ListView_2" ClassName="Fatura.Module.BusinessObjects.Waybill" DetailViewID="Waybill_DetailView_2" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Id" PropertyName="Id" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="WaybillNo" PropertyName="WaybillNo" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Company" PropertyName="Company" Index="3" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="WaybillDetail_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="WaybillDetail" Caption="WaybillDetail" Direction="Vertical" RelativeSize="100">
+              <LayoutItem Id="Product" ViewItem="Product" Index="0" RelativeSize="4.9450549450549453" IsNewNode="True" />
+              <LayoutItem Id="Quantity" ViewItem="Quantity" Index="1" RelativeSize="3.5714285714285716" IsNewNode="True" Removed="True" />
+              <LayoutGroup Id="WaybillDetail_col1" Index="2" RelativeSize="8.791208791208792" Caption="WaybillDetail_col1">
+                <LayoutItem Id="Price" ViewItem="Price" Index="0" RelativeSize="53.125" IsNewNode="True" />
+                <LayoutItem Id="Kdv" RelativeSize="46.875" Index="1" />
+                <LayoutItem Id="Product" RelativeSize="53.125" Removed="True" />
+                <LayoutItem Id="Quantity" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="WaybillDetail_col2" Index="3" RelativeSize="8.791208791208792">
+                <LayoutItem Id="Total" RelativeSize="46.875" Index="0" />
+                <LayoutItem Id="Waybill" RelativeSize="53.125" Index="1" />
+                <LayoutItem Id="Price" RelativeSize="33.333333333333336" Removed="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Waybill" ViewItem="Waybill" Index="4" RelativeSize="73.9010989010989" IsNewNode="True" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="WaybillDetail_DetailView_2" CaptionColon=":" EnableCaptionColon="True" CaptionLocation="Default" CaptionHorizontalAlignment="Default" CaptionVerticalAlignment="Default" CaptionWordWrap="Default" EnableLayoutGroupImages="True" RequiredFieldMark="*" ClassName="Fatura.Module.BusinessObjects.WaybillDetail" DefaultFocusedItem="Id" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Id" PropertyName="Id" IsNewNode="True" />
+        <PropertyEditor Id="Product" PropertyName="Product" IsNewNode="True" />
+        <PropertyEditor Id="Quantity" PropertyName="Quantity" IsNewNode="True" />
+        <PropertyEditor Id="Waybill" PropertyName="Waybill" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="WaybillDetail" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Product" ViewItem="Product" ShowCaption="" Index="0" RelativeSize="4.9844236760124607" MaxSize="400, 0" IsNewNode="True" />
+              <LayoutItem Id="Quantity" ViewItem="Quantity" ShowCaption="" Index="1" RelativeSize="3.7383177570093458" MaxSize="400, 0" IsNewNode="True" />
+              <LayoutItem Id="Waybill" ViewItem="Waybill" ShowCaption="" Index="2" RelativeSize="91.27725856697819" MaxSize="400, 0" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="WaybillDetail_ListView">
+      <Columns>
+        <ColumnInfo Id="Quantity" Index="0" />
+        <ColumnInfo Id="Product" Index="1" />
+        <ColumnInfo Id="Product.Kdv" PropertyName="Product.Kdv" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="WaybillDetail_ListView_2" ClassName="Fatura.Module.BusinessObjects.WaybillDetail" MasterDetailView="WaybillDetail_DetailView_2" DetailViewID="WaybillDetail_DetailView_2" MasterDetailMode="ListViewOnly" DetailRowView="WaybillDetail_DetailView_2" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Id" PropertyName="Id" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Quantity" PropertyName="Quantity" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Product" PropertyName="Product" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Waybill" PropertyName="Waybill" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DashboardView Id="WaybillListDashboardView" Caption="İrsaliye Listesi DashboardView" IsNewNode="True">
+      <Items IsNewNode="True">
+        <DashboardViewItem Id="FilterItem" ViewId="WaybillListDC_DetailView" IsNewNode="True" />
+        <DashboardViewItem Id="ListItem" ViewId="Waybill_ListView" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" IsNewNode="True">
+          <LayoutItem Id="FilterItem" ViewItem="FilterItem" Index="0" IsNewNode="True" />
+          <LayoutItem Id="ListItem" ViewItem="ListItem" Index="1" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
+    <DetailView Id="WaybillListDC_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="WaybillListActionCategoryItem" ActionContainer="WaybillListActionCategory" Caption="WaybillListActionCategoryItem(6)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="WaybillListDC" RelativeSize="100">
+              <LayoutItem Id="StartDate" MaxSize="400, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="49.925037481259373" />
+              <LayoutItem Id="EndDate" MaxSize="400, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="44.977511244377808" />
+              <LayoutItem Id="WaybillListActionCategoryItem" ViewItem="WaybillListActionCategoryItem" Index="2" RelativeSize="5.0974512743628182" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="WaybillProduct_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="WaybillProduct">
+              <LayoutItem Id="Name" SizeConstraintsType="Custom" MaxSize="600, 0" />
+              <LayoutItem Id="Kdv" MaxSize="600, 0" SizeConstraintsType="Custom" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

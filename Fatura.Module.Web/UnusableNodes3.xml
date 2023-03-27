@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="TransportListDC_DetailView" Removed="True">
+      <Items Id="Items">
+        <ActionContainerViewItem Id="TransportListActionCategory" Caption="TransportListActionCategory" />
+      </Items>
+    </DetailView>
+    <ListView Id="TransportListDC_ListView" Removed="True" />
+    <ListView Id="TransportListDC_LookupListView" Removed="True" />
+    <DetailView Id="TransportListDetailDC_DetailView" Removed="True" />
+    <ListView Id="TransportListDetailDC_ListView" Removed="True" />
+    <ListView Id="TransportListDetailDC_LookupListView" Removed="True" />
+  </Views>
+</Application>

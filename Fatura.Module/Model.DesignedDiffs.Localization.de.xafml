@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Fatura.Module.BusinessObjects.Contact" Caption="Contakt" />
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="BenimMenu" Caption="Benim Menu" />
+    </Items>
+  </NavigationItems>
+</Application>

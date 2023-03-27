@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="ContactListDC_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="Detail_Group" Direction="Vertical" Index="2" RelativeSize="89.202453987730067" Caption="Detail">
+            <LayoutItem Id="Detail" RelativeSize="100" Index="0" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
