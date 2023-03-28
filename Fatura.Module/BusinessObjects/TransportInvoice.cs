@@ -47,7 +47,7 @@ namespace Fatura.Module.BusinessObjects
                 return tot;
             }
         }
-        [RuleFromBoolProperty("CheckTotal", "Save", CustomMessageTemplate = "Toplam 500'den fazla olamaz!")]
+        [RuleFromBoolProperty("CheckTotal", "Save", CustomMessageTemplate = "Toplam 500'den fazla olamaz!!")]
         public bool CheckTotal 
         { 
             get

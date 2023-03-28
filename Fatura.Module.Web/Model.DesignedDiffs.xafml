@@ -194,6 +194,38 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="Transport_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="17.976190476190474" IsNewNode="True">
+            <LayoutGroup Id="Transport" Index="0" Direction="Horizontal" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Transport_col1" Index="0" ShowCaption="False" RelativeSize="76.184834123222743" IsNewNode="True">
+                <LayoutItem Id="RegisteredUser" ViewItem="RegisteredUser" ShowCaption="" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
+                <LayoutItem Id="TransportDate" ViewItem="TransportDate" ShowCaption="" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
+                <LayoutItem Id="Explanition" ViewItem="Explanition" ShowCaption="" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+                <LayoutItem Id="TransportCompany" ViewItem="TransportCompany" ShowCaption="" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Transport_col2" Index="1" ShowCaption="False" RelativeSize="23.81516587677725" IsNewNode="True">
+                <LayoutItem Id="TransportAddress" ViewItem="TransportAddress" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="1" RelativeSize="77.5" IsNewNode="True">
+            <LayoutGroup Id="Products" Index="0" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="Products" ViewItem="Products" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="TransportIncomeExpenseDetails" Index="1" ShowCaption="True" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="TransportIncomeExpenseDetails" ViewItem="TransportIncomeExpenseDetails" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+          <LayoutGroup Id="Auto1b2af968-5aa5-4ae4-aba9-60c0c70843ec" ShowCaption="False" Caption="Auto1b2af968-5aa5-4ae4-aba9-60c0c70843ec(16)" Direction="Horizontal" Index="2" RelativeSize="4.5238095238095237" IsNewNode="True">
+            <LayoutItem Id="TotalIncomes" ViewItem="TotalIncomes" SizeConstraintsType="Custom" MinSize="50, 25" MaxSize="200, 0" Index="0" RelativeSize="23.094688221709006" IsNewNode="True" />
+            <LayoutItem Id="TotalExpenses" ViewItem="TotalExpenses" Index="1" RelativeSize="53.810623556581987" MaxSize="200, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+            <LayoutItem Id="TotalBalances" ViewItem="TotalBalances" SizeConstraintsType="Custom" MinSize="50, 25" MaxSize="200, 0" Index="2" RelativeSize="23.094688221709006" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="TransportIncomeExpense_ListView">
       <Columns>
         <ColumnInfo Id="Amount">

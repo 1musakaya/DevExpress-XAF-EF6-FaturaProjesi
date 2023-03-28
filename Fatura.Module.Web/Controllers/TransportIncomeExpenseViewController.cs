@@ -7,6 +7,7 @@ using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.ExpressApp.Templates;
 using DevExpress.ExpressApp.Utils;
+using DevExpress.ExpressApp.Web;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
 using DevExpress.XtraRichEdit.Layout;
@@ -15,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace Fatura.Module.Web.Controllers
 {
@@ -69,65 +71,79 @@ namespace Fatura.Module.Web.Controllers
 
         }
 
-        
+
 
         private void TransportIncomeExpenseDetailViewController_CreateAction_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            IObjectSpace ios = Application.CreateObjectSpace(typeof(Waybill));
+
             bool incomeExists = false;
             bool expenseExists = false;
-            var cobj =ios.GetObjectByKey<Transport>(((TransportIncomeExpense)e.SelectedObjects[0]).Id);
+       
+
 
             //var cobj = ((DetailView)View).CurrentObject as Transport;
-            foreach (TransportIncomeExpense item in cobj.TransportIncomeExpenseDetails)
+            foreach (TransportIncomeExpense item in e.SelectedObjects)
+            {
+                if ((item.Type != null) && (item.Type == TransportIncomeExpenseTypes.Income))
                 {
-                    if ((item.Type != null) && (item.Type == TransportIncomeExpenseTypes.Income))
-                    {
-                        incomeExists = true;
-                    }
-                    if ((item.Type != null) && (item.Type == TransportIncomeExpenseTypes.Expense))
-                    {
-                        expenseExists = true;
-                    }
+                    incomeExists = true;
                 }
-                if ((incomeExists && expenseExists))
+                if ((item.Type != null) && (item.Type == TransportIncomeExpenseTypes.Expense))
                 {
+                    expenseExists = true;
                 }
-                else
+            }
+
+            if ((incomeExists && expenseExists))
+            {
+            }
+            else
+            {
+                IObjectSpace os = Application.CreateObjectSpace(typeof(TransportInvoice));
+
+
+                var mobj = ((PropertyCollectionSource)((ListView)View).CollectionSource).MasterObject as Transport;
+
+                var newobj = os.CreateObject<TransportInvoice>();
+
+                newobj.InvoiceDate = mobj.TransportDate;
+
+                newobj.InvoiceAddress = os.GetObject(mobj.TransportAddress);
+                newobj.TransportCompany = os.GetObject(mobj.TransportCompany);
+
+
+                /*
+                foreach (TransportIncomeExpense item in e.SelectedObjects)
                 {
-                    IObjectSpace os = Application.CreateObjectSpace(typeof(TransportInvoice));
-
-
-                    var mobj = ((PropertyCollectionSource)((ListView)View).CollectionSource).MasterObject as Transport;
-
-                    var newobj = os.CreateObject<TransportInvoice>();
-
-                    newobj.InvoiceDate = mobj.TransportDate;
-
-                    newobj.InvoiceAddress = os.GetObject(mobj.TransportAddress);
-                    newobj.TransportCompany = os.GetObject(mobj.TransportCompany);
-
-
-                    foreach (TransportIncomeExpense item in e.SelectedObjects)
-                    {
-                        newobj.Type = os.GetObject(item.Type);
-
-                    }
-
-                    foreach (TransportIncomeExpense item in e.SelectedObjects)
-                    {
-                        var obj = os.CreateObject<TransportInvoiceDetail>();
-                        obj.Price = item.Amount;
-                        obj.Quantity = item.Quantity;
-                        obj.TransportService = os.GetObject(item.TransportService);
-
-                        newobj.Details.Add(obj);
-                        os.CommitChanges();
-                    }
-
+                    newobj.Type = os.GetObject(item.Type);
 
                 }
-            
+                */
+
+                newobj.Type = ((TransportIncomeExpense)e.SelectedObjects[0]).Type;
+
+                foreach (TransportIncomeExpense item in e.SelectedObjects)
+                {
+                    var obj = os.CreateObject<TransportInvoiceDetail>();
+                    obj.Price = item.Amount;
+                    obj.Quantity = item.Quantity;
+                    obj.TransportService = os.GetObject(item.TransportService);
+
+                    newobj.Details.Add(obj);
+                    os.CommitChanges();
+                }
+
+                DetailView dv = Application.CreateDetailView(os,newobj);
+                dv.ViewEditMode = ViewEditMode.Edit;
+
+                e.ShowViewParameters.CreatedView = dv;
+                e.ShowViewParameters.TargetWindow = TargetWindow.Current;
+
+                //var shortcut = dv.CreateShortcut();
+                //var queryString = ((WebApplication)Application).RequestManager.GetQueryString(shortcut);
+                //var fullViewURL = string.Format("{0}#{1}", HttpContext.Current.Request.Url.AbsoluteUri, queryString);
+                //WebWindow.CurrentRequestWindow.RegisterStartupScript("123456", string.Format("window.open('{0}','_blank');", fullViewURL));
+            }
         }
     }
 }

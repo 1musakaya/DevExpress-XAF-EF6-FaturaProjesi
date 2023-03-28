@@ -64,42 +64,7 @@ namespace Fatura.Module.BusinessObjects
         //    }
         //}
 
-        public double TotalIncome
-        {
-            get
-            {
-                double GetTotalIncome = 0;
-
-
-                GetTotalIncome = GetTotalIncome + (Amount * Quantity);
-                
-                return GetTotalIncome;
-            }
-        }
-        public double TotalExpense
-        {
-            get
-            {
-                double GetTotalExpense = 0;
-
-                GetTotalExpense = GetTotalExpense + (Quantity * Amount);
-
-
-                return GetTotalExpense;
-            }
-        }
-        public double TotalBalance
-        {
-            get
-            {
-                double GetTotalBalance = 0;
-                
-                GetTotalBalance = GetTotalBalance + (TotalIncome - TotalExpense);
-                
-                
-                return GetTotalBalance;
-            }
-        }
+ 
 
 
 

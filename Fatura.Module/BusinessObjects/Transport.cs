@@ -74,8 +74,52 @@ namespace Fatura.Module.BusinessObjects
         //    }
         //}
 
+        public double TotalIncomes 
+        { 
+            get
+            {
+                double total = 0;
+                foreach (var item in TransportIncomeExpenseDetails)
+                {
+                    if (item.Type == TransportIncomeExpenseTypes.Income)
+                    {
+                        total += item.Quantity * item.Amount;
+                    }
+                }
 
+                return total;
+            }
+         }
+        
+        public double TotalExpenses
+        {
+            get
+            {
+                double total = 0;
+                foreach (var item in TransportIncomeExpenseDetails)
+                {
+                    if (item.Type == TransportIncomeExpenseTypes.Expense)
+                    {
+                        total += item.Quantity * item.Amount;
+                    }
+                    
+                }
+                return total;
+            }
+        }
+        public double TotalBalances
+        {
+            get
+            {
+                /*
+                double balance = 0;
+                balance = (TotalIncomes - TotalBalances);
+                return balance;
+                */
 
+                return (TotalIncomes - TotalExpenses);
+            }
+        }
 
         [Aggregated]
         public virtual IList<ListProduct> Products { get; set; }
