@@ -58,7 +58,7 @@ namespace Fatura.Module.BusinessObjects
 
                 foreach (var item in Details)
                 {
-                    total = (total + (item.Quantity * item.Price));
+                    total = total + (item.Quantity * item.Price);
                 }
 
                 if (total > 500)

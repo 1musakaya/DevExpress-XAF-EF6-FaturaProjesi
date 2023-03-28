@@ -78,9 +78,6 @@ namespace Fatura.Module.Web.Controllers
 
             bool incomeExists = false;
             bool expenseExists = false;
-       
-
-
             //var cobj = ((DetailView)View).CurrentObject as Transport;
             foreach (TransportIncomeExpense item in e.SelectedObjects)
             {
@@ -94,13 +91,12 @@ namespace Fatura.Module.Web.Controllers
                 }
             }
 
-            if ((incomeExists && expenseExists))
+            if (incomeExists && expenseExists)
             {
             }
             else
             {
                 IObjectSpace os = Application.CreateObjectSpace(typeof(TransportInvoice));
-
 
                 var mobj = ((PropertyCollectionSource)((ListView)View).CollectionSource).MasterObject as Transport;
 

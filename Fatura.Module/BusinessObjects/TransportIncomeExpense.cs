@@ -33,41 +33,6 @@ namespace Fatura.Module.BusinessObjects
         public double Amount { get; set; }
         public virtual TransportService TransportService { get; set; }
 
-        //[RuleFromBoolProperty("CheckType", "Save", CustomMessageTemplate = " Sadece bir kayıttan fatura oluşturabilirsiniz.")]
-        //public bool CheckType
-
-        //{
-        //    get
-        //    {
-        //        bool result = true;
-
-        //        bool incomeExists = false;
-        //        bool expenseExists = false;
-
-
-                
-        //            if ((Type != null) && (Type == TransportIncomeExpenseTypes.Income))
-        //            {
-        //                incomeExists = true;
-        //            }
-        //            if ((Type != null) && (Type == TransportIncomeExpenseTypes.Expense))
-        //            {
-        //                expenseExists = true;
-        //            }
-                
-        //        if (result = (incomeExists && expenseExists))
-        //        {
-        //            result = false;
-        //        }
-
-        //        return result;
-        //    }
-        //}
-
- 
-
-
-
         #region IXafEntityObject members (see https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppIXafEntityObjecttopic.aspx)
         void IXafEntityObject.OnCreated()
         {
