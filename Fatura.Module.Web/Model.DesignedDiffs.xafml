@@ -197,20 +197,19 @@
     <DetailView Id="Transport_DetailView" FreezeLayout="True">
       <Layout IsNewNode="True" Removed="True">
         <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
-          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="18.527607361963192" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="21.472392638036808" IsNewNode="True">
             <LayoutGroup Id="Transport" Index="0" Direction="Horizontal" ShowCaption="True" RelativeSize="100" IsNewNode="True">
-              <LayoutGroup Id="Transport_col1" Index="0" ShowCaption="False" RelativeSize="76.108374384236456" IsNewNode="True">
-                <LayoutItem Id="RegisteredUser" ViewItem="RegisteredUser" ShowCaption="" Index="0" RelativeSize="28.571428571428573" IsNewNode="True" />
-                <LayoutItem Id="TransportDate" ViewItem="TransportDate" ShowCaption="" Index="1" RelativeSize="21.428571428571427" IsNewNode="True" />
-                <LayoutItem Id="Explanition" ViewItem="Explanition" ShowCaption="" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
-                <LayoutItem Id="TransportCompany" ViewItem="TransportCompany" ShowCaption="" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" />
+              <LayoutGroup Id="Transport_col1" Index="0" ShowCaption="False" RelativeSize="75.985221674876854" IsNewNode="True">
+                <LayoutItem Id="RegisteredUser" ViewItem="RegisteredUser" ShowCaption="" Index="0" RelativeSize="23.529411764705884" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+                <LayoutItem Id="TransportDate" ViewItem="TransportDate" ShowCaption="" Index="1" RelativeSize="17.647058823529413" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+                <LayoutItem Id="Explanition" ViewItem="Explanition" ShowCaption="" Index="2" RelativeSize="17.647058823529413" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+                <LayoutItem Id="TransportAddress" ViewItem="TransportAddress" Index="3" RelativeSize="17.647058823529413" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+                <LayoutItem Id="TransportCompany" ViewItem="TransportCompany" ShowCaption="" Index="4" RelativeSize="23.529411764705884" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Transport_col2" Index="1" ShowCaption="False" RelativeSize="23.891625615763548" IsNewNode="True">
-                <LayoutItem Id="TransportAddress" ViewItem="TransportAddress" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
-              </LayoutGroup>
+              <LayoutGroup Id="Transport_col2" Index="1" ShowCaption="False" RelativeSize="24.014778325123153" Caption="Transport Address" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" Index="1" RelativeSize="72.269938650306742" IsNewNode="True">
+          <TabbedGroup Id="Tabs" Index="1" RelativeSize="69.325153374233125" IsNewNode="True">
             <LayoutGroup Id="Products" Index="0" ShowCaption="True" RelativeSize="100" IsNewNode="True">
               <LayoutItem Id="Products" ViewItem="Products" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True" />
             </LayoutGroup>
@@ -226,6 +225,69 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="TransportAddress_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+            <LayoutGroup Id="TransportAddress" Index="0" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="FullAddress" ViewItem="FullAddress" ShowCaption="" Index="0" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="Country" ViewItem="Country" ShowCaption="" Index="1" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="City" ViewItem="City" ShowCaption="" Index="2" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="TransportCities_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+            <LayoutGroup Id="TransportCities" Index="0" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="Name" ViewItem="Name" ShowCaption="" Index="0" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="Country" ViewItem="Country" ShowCaption="" Index="1" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="TransportCompany_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+            <LayoutGroup Id="TransportCompany" Index="0" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="Name" ViewItem="Name" ShowCaption="" Index="0" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="CompanyAddress" ViewItem="CompanyAddress" ShowCaption="" Index="1" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="PhoneNumber" ViewItem="PhoneNumber" ShowCaption="" Index="2" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="TransportCountry_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+            <LayoutGroup Id="TransportCountry" Index="0" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="Name" ViewItem="Name" ShowCaption="" Index="0" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="TransportIncomeExpense_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+            <LayoutGroup Id="TransportIncomeExpense" Index="0" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="Type" ViewItem="Type" ShowCaption="" Index="0" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="Quantity" ViewItem="Quantity" ShowCaption="" Index="1" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="Amount" ViewItem="Amount" ShowCaption="" Index="2" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="TransportService" ViewItem="TransportService" ShowCaption="" Index="3" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="TransportIncomeExpense_ListView">
       <Columns>
         <ColumnInfo Id="Amount">
@@ -235,6 +297,28 @@
         </ColumnInfo>
       </Columns>
     </ListView>
+    <DetailView Id="TransportInvoice_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="23.926380368098158" IsNewNode="True">
+            <LayoutGroup Id="TransportInvoice" Index="0" Direction="Horizontal" ShowCaption="True" Caption="Transport Invoice" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="TransportInvoice_col1" Index="0" ShowCaption="False" RelativeSize="36.777367773677739" IsNewNode="True">
+                <LayoutItem Id="Type" ViewItem="Type" ShowCaption="" Index="0" MaxSize="300, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="16.025641025641026" IsNewNode="True" />
+                <LayoutItem Id="InvoiceDate" ViewItem="InvoiceDate" ShowCaption="" Index="1" MaxSize="300, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="16.025641025641026" IsNewNode="True" />
+                <LayoutItem Id="TransportCompany" ViewItem="TransportCompany" SizeConstraintsType="Custom" MinSize="50, 25" MaxSize="300, 0" Index="2" RelativeSize="16.025641025641026" IsNewNode="True" />
+                <LayoutItem Id="InvoiceAddress" ViewItem="InvoiceAddress" ShowCaption="" Index="3" MaxSize="300, 0" SizeConstraintsType="Custom" MinSize="50, 25" RelativeSize="16.025641025641026" IsNewNode="True" />
+                <LayoutItem Id="Total" ViewItem="Total" SizeConstraintsType="Custom" MinSize="50, 25" MaxSize="300, 0" Index="4" RelativeSize="16.025641025641026" IsNewNode="True" />
+                <LayoutItem Id="CheckTotal" ViewItem="CheckTotal" Index="5" RelativeSize="19.871794871794872" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="TransportInvoice_col2" Index="1" ShowCaption="False" RelativeSize="63.222632226322261" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Details_Group" Index="1" ShowCaption="True" RelativeSize="76.073619631901835" IsNewNode="True">
+            <LayoutItem Id="Details" ViewItem="Details" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="TransportInvoice_ListView">
       <Columns>
         <ColumnInfo Id="Total">
@@ -267,6 +351,30 @@
               <LayoutItem Id="StartDate" MaxSize="400, 0" SizeConstraintsType="Custom" />
               <LayoutItem Id="EndDate" MaxSize="400, 0" SizeConstraintsType="Custom" />
               <LayoutItem Id="TransportListActionCategory" ViewItem="TransportListActionCategory" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="TransportProduct_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+            <LayoutGroup Id="TransportProduct" Index="0" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="ProductName" ViewItem="ProductName" ShowCaption="" Index="0" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="ProductCode" ViewItem="ProductCode" ShowCaption="" Index="1" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="TransportService_DetailView" FreezeLayout="True">
+      <Layout IsNewNode="True" Removed="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" IsNewNode="True">
+            <LayoutGroup Id="TransportService" Index="0" ShowCaption="False" IsNewNode="True">
+              <LayoutItem Id="Service" ViewItem="Service" ShowCaption="" Index="0" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
+              <LayoutItem Id="ServiceCode" ViewItem="ServiceCode" ShowCaption="" Index="1" MaxSize="300, 0" SizeConstraintsType="Custom" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>

@@ -133,7 +133,7 @@ namespace Fatura.Module.Web.Controllers
                 dv.ViewEditMode = ViewEditMode.Edit;
 
                 e.ShowViewParameters.CreatedView = dv;
-                e.ShowViewParameters.TargetWindow = TargetWindow.Current;
+                e.ShowViewParameters.TargetWindow = TargetWindow.Default;
 
                 //var shortcut = dv.CreateShortcut();
                 //var queryString = ((WebApplication)Application).RequestManager.GetQueryString(shortcut);
