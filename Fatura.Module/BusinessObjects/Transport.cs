@@ -44,35 +44,35 @@ namespace Fatura.Module.BusinessObjects
 
         public virtual TransportAddress TransportAddress { get; set; }
 
-        //[RuleFromBoolProperty("CheckType", "Save", CustomMessageTemplate = "En az bir tane gelir ve gider kaydı olmalı!")]
-        //public bool CheckType
-        //{
-        //    get
-        //    {
-        //        bool result = false;
+        [RuleFromBoolProperty("CheckType", "Save", CustomMessageTemplate = "En az bir tane gelir ve gider kaydı olmalı!")]
+        public bool CheckType
+        {
+            get
+            {
+                bool result = false;
 
-        //        bool incomeExists = false;
-        //        bool expenseExists = false;
+                bool incomeExists = false;
+                bool expenseExists = false;
 
-        //        foreach (var item in TransportIncomeExpenseDetails)
-        //        {
-        //            if ((item.Type != null) && (item.Type == TransportIncomeExpenseTypes.Income))
-        //            {
-        //                incomeExists = true;
-        //            }
-        //            if ((item.Type != null) && (item.Type == TransportIncomeExpenseTypes.Expense))
-        //            {
-        //                expenseExists = true;
-        //            }
-        //        }
+                foreach (var item in TransportIncomeExpenseDetails)
+                {
+                    if ((item.Type != null) && (item.Type == TransportIncomeExpenseTypes.Income))
+                    {
+                        incomeExists = true;
+                    }
+                    if ((item.Type != null) && (item.Type == TransportIncomeExpenseTypes.Expense))
+                    {
+                        expenseExists = true;
+                    }
+                }
 
-        //        result = (incomeExists && expenseExists);
+                result = (incomeExists && expenseExists);
 
-        //        //return result;
+                //return result;
 
-        //        return true;
-        //    }
-        //}
+                return true;
+            }
+        }
 
         public double TotalIncomes 
         { 

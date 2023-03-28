@@ -107,7 +107,6 @@ namespace Fatura.Module.Web.Controllers
 
             newobj.Explanition = obje.Explanition + "*";
             newobj.TransportAddress = obje.TransportAddress;
-            //newobj.TransportAddress.ExitAddress = obje.TransportAddress.ExitAddress;
             newobj.RegisteredUser= obje.RegisteredUser;
             newobj.TransportDate= obje.TransportDate;
             newobj.TransportCompany = obje.TransportCompany;
